@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -19,6 +19,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Create site directory
+        run: mkdir -p ./site
+      - name: Copy built files to site directory
+        run: cp -a ./dist/. ./site/
+        
       # Deploy
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
