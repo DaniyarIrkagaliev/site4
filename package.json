@@ -15,7 +15,7 @@
     "html": "html-minifier --remove-comments --collapse-whitespace --input-dir src --output-dir dist --file-ext html",
     "styles": "postcss src/css/style.css --use postcss-import --use postcss-csso --no-map --output dist/css/style.css",
     "normalize-styles": "postcss src/css/normalize.css --use postcss-csso --no-map --output dist/css/normalize.css",
-    "copy-images": "cp -a src/images/. dist/src/images/",
+    "copy-images": "cp -a src/images/. src/images/",
     "build": "npm run html && npm run styles && npm run normalize-styles && npm run copy-images",
     "serve": "serve"
   },
